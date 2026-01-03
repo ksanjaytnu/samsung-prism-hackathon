@@ -1,0 +1,32 @@
+web_recon_task:
+  description: >
+    Analyze third-party tech news and blogs to identify recent
+    competitor product launches, updates, or positioning changes.
+  expected_output: >
+    Concise summary of detected changes with strategic interpretation.
+
+social_spy_task:
+  description: >
+    Analyze public social discussions to identify recurring competitor
+    themes, complaints, or hype signals.
+  expected_output: >
+    Key social trends with sentiment and potential business impact.
+
+hiring_talent_task:
+  description: >
+    Analyze public job postings to detect hiring spikes or new role clusters.
+  expected_output: >
+    Inferred strategic intent based on hiring patterns.
+
+patent_rd_task:
+  description: >
+    Analyze patent summaries, arXiv abstracts, or GitHub README files
+    to identify emerging innovation themes.
+  expected_output: >
+    Innovation direction with estimated time horizon.
+
+pricing_tracker_task:
+  description: >
+    Analyze reviews and forums to infer pricing changes or strategy shifts.
+  expected_output: >
+    Pricing signal summary and likely market impact.
