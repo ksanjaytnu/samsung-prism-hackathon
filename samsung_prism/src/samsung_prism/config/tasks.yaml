@@ -1,32 +1,105 @@
 web_recon_task:
   description: >
-    Analyze third-party tech news and blogs to identify recent
-    competitor product launches, updates, or positioning changes.
+    Analyze recent product launches, updates, and positioning changes
+    of {{ competitors }} compared to {{ our_company }} using third-party
+    tech news and blogs.
+    ONLY analyze the explicitly provided competitors: {{ competitors }} .
+    Do NOT introduce any additional companies.
+
   expected_output: >
-    Concise summary of detected changes with strategic interpretation.
+    A structured summary of competitor moves and strategic implications
+    for {{ our_company }}.
+    detected changes with strategic interpretation.
+  expected_output: >
+    Bullet points only.
+    Maximum 120 words.
+    No explanations.
+
 
 social_spy_task:
   description: >
-    Analyze public social discussions to identify recurring competitor
-    themes, complaints, or hype signals.
+    Analyze public social discussions about {{ competitors }}
+    to identify complaints, hype signals, and sentiment compared to
+    {{ our_company }}.
+    ONLY analyze the explicitly provided competitors: {{ competitors }}.
+    Do NOT introduce any additional companies.
+
   expected_output: >
     Key social trends with sentiment and potential business impact.
+  expected_output: >
+    Bullet points only.
+    Maximum 120 words.
+    No explanations.
 
 hiring_talent_task:
   description: >
-    Analyze public job postings to detect hiring spikes or new role clusters.
+    Analyze hiring trends and job postings of {{ competitors }}
+    to infer strategic focus areas versus {{ our_company }}.
+    ONLY analyze the explicitly provided competitors: {{ competitors }}.
+    Do NOT introduce any additional companies.
+
   expected_output: >
     Inferred strategic intent based on hiring patterns.
+  expected_output: >
+    Bullet points only.
+    Maximum 120 words.
+    No explanations.
 
 patent_rd_task:
   description: >
-    Analyze patent summaries, arXiv abstracts, or GitHub README files
-    to identify emerging innovation themes.
+      Analyze patents, research papers, and open-source activity
+      related to {{ competitors }} to identify innovation directions
+      impacting {{ our_company }}.
+      ONLY analyze the explicitly provided competitors: {{ competitors }}.
+      Do NOT introduce any additional companies.
+
   expected_output: >
     Innovation direction with estimated time horizon.
+  expected_output: >
+    Bullet points only.
+    Maximum 120 words.
+    No explanations.
 
 pricing_tracker_task:
   description: >
-    Analyze reviews and forums to infer pricing changes or strategy shifts.
+    Infer pricing strategy changes of {{ competitors }} and
+    compare them with {{ our_company }}.
+    ONLY analyze the explicitly provided competitors: {{ competitors }}.
+    Do NOT introduce any additional companies.
+
   expected_output: >
     Pricing signal summary and likely market impact.
+  expected_output: >
+    Bullet points only.
+    Maximum 120 words.
+    No explanations.
+
+final_synthesis_task:
+  description: >
+    Synthesize insights from ALL previous analyses (web, social,
+    hiring, R&D, pricing) into a unified competitor intelligence report
+    for {{ our_company }}.
+    ONLY analyze the explicitly provided competitors: {{ competitors }}.
+    Do NOT introduce any additional companies.
+
+
+    The analysis MUST cover ALL product categories:
+    - Consumer electronics
+    - Enterprise & B2B solutions
+    - Software & platforms
+    - Cloud & AI services
+    - Semiconductors & hardware
+    - Ecosystem & services
+
+    Explicitly avoid focusing only on mobile phones.
+  expected_output: >
+    A concise executive summary (max 400 words) containing:
+    - Key competitive strengths per competitor
+    - Major risks for {{ our_company }}
+    - Top 5 strategic recommendations
+
+  limit_context_to_key_findings: true
+  expected_output: >
+    Maximum 250 words.
+    Bullet points only.
+
