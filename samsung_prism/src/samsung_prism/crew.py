@@ -4,6 +4,13 @@ import yaml
 from pathlib import Path
 import os
 
+
+os.environ["OPENAI_API_KEY"] = ""   # force-disable
+os.environ["AZURE_OPENAI_API_KEY"] = ""
+os.environ["ANTHROPIC_API_KEY"] = ""
+os.environ["GROQ_API_KEY"] = os.environ["GROQ_API_KEY"]
+
+
 # --------------------------------------------------
 # PATH SETUP
 # --------------------------------------------------
@@ -39,9 +46,11 @@ os.environ["LITELLM_MODEL"] = "groq/llama-3.1-8b-instant"
 # --------------------------------------------------
 SAFE_LLM = LLM(
     model="groq/llama-3.1-8b-instant",
+    api_key=os.environ["GROQ_API_KEY"],  # important
     temperature=0.3,
     max_tokens=300
 )
+
 
 # --------------------------------------------------
 # CREW
@@ -191,3 +200,7 @@ class SamsungCompetitorIntelligenceCrew:
             memory=False,        # 🔥 prevents context explosion
             max_rpm=5            # 🔥 slows calls safely
         )
+
+
+print("Using model:", SAFE_LLM.model)
+print("Key prefix:", os.environ["GROQ_API_KEY"][:6])

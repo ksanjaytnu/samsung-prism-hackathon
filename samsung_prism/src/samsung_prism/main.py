@@ -1,5 +1,8 @@
 from samsung_prism.crew import SamsungCompetitorIntelligenceCrew
 
+import os
+print("GROQ_API_KEY loaded:", os.getenv("GROQ_API_KEY"))
+
 
 def run():
     print("\n=== COMPETITOR INTELLIGENCE SYSTEM ===\n")
