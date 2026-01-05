@@ -76,12 +76,18 @@ pricing_tracker_task:
 
 final_synthesis_task:
   description: >
-    Synthesize insights from ALL previous analyses (web, social,
-    hiring, R&D, pricing) into a unified competitor intelligence report
-    for {{ our_company }}.
-    ONLY analyze the explicitly provided competitors: {{ competitors }}.
-    Do NOT introduce any additional companies.
+    You are the Chief Strategy & Intelligence Synthesizer.
 
+    Synthesize insights from ALL prior analyses (web reconnaissance,
+    social sentiment, hiring trends, R&D/patents, and pricing strategy)
+    into ONE unified competitor intelligence report for {{ our_company }}.
+
+    STRICT RULES:
+    - {{ our_company }} is OUR company — always replace it with the actual name.
+    - NEVER output "{{ our_company }}" or "{{ competitors }}" literally.
+    - ONLY analyze the explicitly provided competitors: {{ competitors }}.
+    - Do NOT introduce, infer, or mention any additional companies.
+    - {{ our_company }} must NEVER appear as a competitor.
 
     The analysis MUST cover ALL product categories:
     - Consumer electronics
@@ -92,14 +98,15 @@ final_synthesis_task:
     - Ecosystem & services
 
     Explicitly avoid focusing only on mobile phones.
+    Balance insights across ALL categories.
+
   expected_output: >
-    A concise executive summary (max 400 words) containing:
+    Bullet points only.
+    Maximum 250 words.
+
+    Include:
     - Key competitive strengths per competitor
-    - Major risks for {{ our_company }}
-    - Top 5 strategic recommendations
+    - Major strategic risks for {{ our_company }}
+    - Top 5 actionable strategic recommendations FOR {{ our_company }}
 
   limit_context_to_key_findings: true
-  expected_output: >
-    Maximum 250 words.
-    Bullet points only.
-
